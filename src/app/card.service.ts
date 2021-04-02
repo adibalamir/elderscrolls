@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 export class CardService {
   constructor(private http: HttpClient) {}
 
-  getCards(page: number): Observable<any> {
+  getCards(page: number, value: string): Observable<any> {
     const cards = this.http.get(
-      `https://api.elderscrollslegends.io/v1/cards?page=${page}&pageSize=10`
+      `https://api.elderscrollslegends.io/v1/cards?page=${page}&pageSize=10&name=${value}`
     ) as Observable<any>;
 
     return cards;
