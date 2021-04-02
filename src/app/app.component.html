@@ -4,6 +4,10 @@
   [infiniteScrollThrottle]="throttle"
   (scrolled)="onScroll()"
 >
+<div class="flex-container search-bar">
+    <input type="text" [value]="value" (keydown)="onChange($event)" placeholder="search by card name" />
+</div>
+
 <div class="flex-container">
     <mat-card *ngFor="let card of cards" class="flex-child">
         <img mat-card-image src='{{ card.imageUrl }}'>
